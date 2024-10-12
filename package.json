@@ -1,0 +1,28 @@
+{
+    "name": "firecrawl",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+      "apps/*",
+      "packages/*"
+    ],
+    "scripts": {
+      "build": "pnpm recursively run build",
+      "start:production": "pnpm recursively run start:production",
+      "workers": "pnpm recursively run workers",
+      "sentry:sourcemaps": "sentry-cli releases files YOUR_RELEASE_NAME upload-sourcemaps ./dist --url-prefix '~/dist' --validate",
+      "lint": "eslint . --ext .ts,.tsx",
+      "format": "prettier --write ."
+    },
+    "dependencies": {
+      
+    },
+    "devDependencies": {
+      "typescript": "^5.0.0",
+      "pnpm": "^8.0.0",
+      "eslint": "^8.0.0",
+      "prettier": "^3.0.0",
+      "sentry-cli": "^2.0.0"
+    }
+  }
+  
